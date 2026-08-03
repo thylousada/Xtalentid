@@ -22,6 +22,11 @@ console.log("Erro ao carregar componente:", error);
 }
 
 
+let isPages = window.location.pathname.includes("/pages/");
+
+
+if (isPages) {
+
 
 loadComponent(
 "header",
@@ -29,12 +34,30 @@ loadComponent(
 );
 
 
-
 loadComponent(
 "footer",
 "../components/footer.html"
 );
 
+
+
+} else {
+
+
+loadComponent(
+"header",
+"components/header.html"
+);
+
+
+loadComponent(
+"footer",
+"components/footer.html"
+);
+
+
+
+}
 
 
 });
