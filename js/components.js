@@ -1,63 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
+    const isPages = window.location.pathname.includes("/pages/");
+    const base = isPages ? "../" : "";
 
-function loadComponent(id, file) {
+    function loadComponent(id, file) {
+        fetch(file)
+            .then(r => r.text())
+            .then(html => {
+                html = html.replace(/\.\.\//g, base);
+                document.getElementById(id).innerHTML = html;
+            })
+            .catch(err => console.error(err));
+    }
 
-fetch(file)
-
-.then(response => response.text())
-
-.then(data => {
-
-document.getElementById(id).innerHTML = data;
-
-})
-
-.catch(error => {
-
-console.log("Erro ao carregar componente:", error);
-
-});
-
-}
-
-
-let isPages = window.location.pathname.includes("/pages/");
-
-
-if (isPages) {
-
-
-loadComponent(
-"header",
-"../components/header.html"
-);
-
-
-loadComponent(
-"footer",
-"../components/footer.html"
-);
-
-
-
-} else {
-
-
-loadComponent(
-"header",
-"components/header.html"
-);
-
-
-loadComponent(
-"footer",
-"components/footer.html"
-);
-
-
-
-}
-
+    loadComponent("header", base + "components/header.html");
+    loadComponent("footer", base + "components/footer.html");
 
 });
