@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Deteta a raiz do projeto para carregar os componentes
     const isSubfolder = window.location.pathname.includes('/pages/');
     const basePath = isSubfolder ? '../' : './';
 
@@ -9,7 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(basePath + "components/header.html")
             .then(response => response.text())
             .then(data => {
-                headerContainer.innerHTML = data;
+                let html = data;
+                if (isSubfolder) {
+                    // Ajusta caminhos para quando estás numa subpágina dentro de /pages/
+                    html = html
+                        .replace(/href="index\.html"/g, 'href="../index.html"')
+                        .replace(/href="pages\//g, 'href="../pages/')
+                        .replace(/src="images\//g, 'src="../images/');
+                }
+                headerContainer.innerHTML = html;
             })
             .catch(err => console.error("Erro ao carregar header:", err));
     }
@@ -20,7 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(basePath + "components/footer.html")
             .then(response => response.text())
             .then(data => {
-                footerContainer.innerHTML = data;
+                let html = data;
+                if (isSubfolder) {
+                    html = html
+                        .replace(/href="index\.html"/g, 'href="../index.html"')
+                        .replace(/href="pages\//g, 'href="../pages/')
+                        .replace(/src="images\//g, 'src="../images/');
+                }
+                footerContainer.innerHTML = html;
             })
             .catch(err => console.error("Erro ao carregar footer:", err));
     }
