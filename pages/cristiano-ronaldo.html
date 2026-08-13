@@ -203,7 +203,6 @@
             z-index: 2;
         }
 
-        /* Accordion Component */
         .timeline-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -313,6 +312,110 @@
             gap: 8px;
         }
 
+        /* Estilos de Notícias & Imprensa */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .news-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .news-card:hover {
+            border-color: #00e676;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .news-source {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #00b359;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .news-snippet {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.25rem;
+        }
+
+        .news-link {
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .news-link:hover {
+            color: #00e676;
+        }
+
+        /* Estilos da Galeria de Fotos (Até 10 fotos) */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: #0f172a;
+            border: 1px solid #e2e8f0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));
+            color: #ffffff;
+            font-size: 0.8rem;
+            padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
         /* Grelha e Responsividade para Múltiplos Vídeos */
         .video-grid {
             display: grid;
@@ -347,7 +450,7 @@
 
         .video-responsive {
             position: relative;
-            padding-bottom: 56.25%; /* Mantém a proporção exata de 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             background: #000;
@@ -392,8 +495,8 @@
                 gap: 1rem;
             }
 
-            .video-grid {
-                grid-template-columns: 1fr;
+            .photo-gallery {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -744,6 +847,88 @@
             </div>
         </section>
 
+        <!-- Notícias & Cobertura de Imprensa -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Notícias & Imprensa</h2>
+                    <p>Artigos, entrevistas e destaques publicados em órgãos de comunicação social.</p>
+                </div>
+
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div>
+                            <span class="news-source">Jornal A Bola</span>
+                            <h3 class="news-title">Cristiano Ronaldo atinge marca histórica de golos na carreira</h3>
+                            <p class="news-snippet">O capitão da seleção portuguesa continua a somar registos assombrosos e bate mais um recorde mundial.</p>
+                        </div>
+                        <a href="https://www.abola.pt" target="_blank" rel="noopener" class="news-link">
+                            Ler artigo completo ↗
+                        </a>
+                    </div>
+
+                    <div class="news-card">
+                        <div>
+                            <span class="news-source">UEFA.com</span>
+                            <h3 class="news-title">O legado inigualável de Ronaldo na Liga dos Campeões</h3>
+                            <p class="news-snippet">Uma análise detalhada aos números e momentos decisivos do maior marcador da história da Champions.</p>
+                        </div>
+                        <a href="https://www.uefa.com" target="_blank" rel="noopener" class="news-link">
+                            Ler artigo completo ↗
+                        </a>
+                    </div>
+
+                    <div class="news-card">
+                        <div>
+                            <span class="news-source">FPF Official</span>
+                            <h3 class="news-title">Homenagem da Federação pelos 200+ jogos pela Seleção Nacional</h3>
+                            <p class="news-snippet">Momento solene de reconhecimento pela dedicação e liderança ao serviço de Portugal.</p>
+                        </div>
+                        <a href="https://www.fpf.pt" target="_blank" rel="noopener" class="news-link">
+                            Ler artigo completo ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria de Fotos do Atleta (Máx 10 fotos) -->
+        <section class="section grey">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Galeria de Fotos (Destaques)</h2>
+                    <p>Momentos de jogos, conquistas e estágios de treino (máximo de 10 fotos selecionadas).</p>
+                </div>
+
+                <div class="photo-gallery">
+                    <div class="gallery-item">
+                        <img src="../images/cristianoronaldo.jpg" alt="Foto 1">
+                        <div class="gallery-caption">Apresentação Al-Nassr</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../images/cristianoronaldo.jpg" alt="Foto 2">
+                        <div class="gallery-caption">Seleção Nacional 🇵🇹</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../images/cristianoronaldo.jpg" alt="Foto 3">
+                        <div class="gallery-caption">Final Champions League</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../images/cristianoronaldo.jpg" alt="Foto 4">
+                        <div class="gallery-caption">Entrega Bola de Ouro</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../images/cristianoronaldo.jpg" alt="Foto 5">
+                        <div class="gallery-caption">Euro 2016 - Campeão</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../images/cristianoronaldo.jpg" alt="Foto 6">
+                        <div class="gallery-caption">Estágio de Treino</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Galeria Mídia / Múltiplos Vídeos -->
         <section class="section">
             <div class="container">
@@ -827,7 +1012,7 @@
             timelineItem.classList.toggle('active');
         }
 
-        // Função de Partilha do Sports Passport (Web Share API com Fallback de Copy Link)
+        // Função de Partilha do Sports Passport
         function sharePassport() {
             const shareData = {
                 title: 'Cristiano Ronaldo | XTalentID Sports Passport',
@@ -837,10 +1022,9 @@
 
             if (navigator.share) {
                 navigator.share(shareData).catch((err) => {
-                    console.log('Partilha cancelada ou não suportada:', err);
+                    console.log('Partilha cancelada:', err);
                 });
             } else {
-                // Fallback para navegadores sem Web Share API (copia o link)
                 navigator.clipboard.writeText(window.location.href).then(() => {
                     const shareText = document.getElementById('shareText');
                     const originalText = shareText.innerText;
@@ -848,7 +1032,7 @@
                     setTimeout(() => {
                         shareText.innerText = originalText;
                     }, 2500);
-                }).catch(err => {
+                }).catch(() => {
                     alert('Link do passaporte: ' + window.location.href);
                 });
             }
