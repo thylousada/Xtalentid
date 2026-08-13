@@ -3,570 +3,247 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Clubes | XTalentID</title>
+    <title>Clubes | XTalentID</title>
 
-<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
-
 <body>
 
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/xtalentidlogo.jpg" alt="XTalentID">
+                </a>
+            </div>
 
-<header>
-    <div class="container navbar">
-        <div class="logo">
-            <a href="../index.html">
-                <img src="../images/xtalentidlogo.jpg" alt="XTalentID">
+            <!-- Barra de Pesquisa Rápida -->
+            <div class="search-box">
+                <input type="text" id="globalSearch" placeholder="Pesquisar..." onkeyup="searchRedirect(event)">
+                <button onclick="executeSearch()">🔍</button>
+            </div>
+
+            <nav>
+                <a href="../index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="atletas.html">Atletas</a>
+                <a href="treinadores.html">Treinadores</a>
+                <a href="clubes.html">Clubes</a>
+                <a href="founding-members.html">Founding Members</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+
+            <a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-primary">
+                Criar Sports Passport
             </a>
         </div>
-        <nav>
-            <a href="../index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="atletas.html">Atletas</a>
-            <a href="treinadores.html">Treinadores</a>
-            <a href="clubes.html">Clubes</a>
-            <a href="founding-members.html">Founding Members</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-        <a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-primary">
-            Criar Sports Passport
-        </a>
-    </div>
-</header>
-
-
-
-<main>
-
-
-
-<section class="hero">
-
-
-<div class="container hero-grid">
-
-
-<div class="hero-content">
-
-
-<span class="tag">
-XTALENTID FOR CLUBS
-</span>
-
-
-
-<h1>
-
-Descobre talento com mais confiança.
-
-</h1>
-
-
-
-<p>
-
-Uma plataforma criada para ajudar clubes a conhecer melhor atletas, treinadores e profissionais do desporto através de identidades digitais organizadas e verificáveis.
-
-</p>
-
-
-
-<div class="hero-buttons">
-
-
-<a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-primary">
-
-Juntar o meu clube
-
-</a>
-
-
-<a href="#benefits" class="btn-outline">
-
-Saber mais
-
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-<div class="hero-card">
-
-
-<div class="passport">
-
-
-<div class="passport-header">
-
-<span>
-XTalentID
-</span>
-
-
-<strong>
-CLUB
-</strong>
-
-
-</div>
-
-
-
-<h3>
-
-Talent Discovery
-
-</h3>
-
-
-<p>
-Verified Sports Network
-</p>
-
-
-
-<div class="line"></div>
-
-
-
-
-<div class="data">
-
-
-<div>
-
-<strong>
-Athletes
-</strong>
-
-<span>
-Histórico e percurso organizado
-</span>
-
-</div>
-
-
-
-<div>
-
-<strong>
-Coaches
-</strong>
-
-<span>
-Experiência e referências
-</span>
-
-</div>
-
-
-</div>
-
-
-
-<div class="verified">
-
-✓ Trusted Network
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="section">
-
-
-<div class="container center">
-
-
-<h2>
-
-O talento existe. A informação precisa de confiança.
-
-</h2>
-
-
-<p>
-
-Os clubes recebem diariamente jogadores, vídeos, recomendações e contactos.
-
-A XTalentID ajuda a organizar essa informação para criar melhores ligações no mundo do desporto.
-
-</p>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-<section id="benefits" class="section grey">
-
-
-<div class="container">
-
-
-<div class="section-title">
-
-
-<h2>
-
-O que a XTalentID oferece aos clubes
-
-</h2>
-
-
-</div>
-
-
-
-
-<div class="cards">
-
-
-
-<div class="card">
-
-
-<div class="icon">
-🔎
-</div>
-
-
-<h3>
-Scouting mais informado
-</h3>
-
-
-<p>
-
-Conhece melhor o percurso de atletas antes de tomar decisões.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<div class="icon">
-✅
-</div>
-
-
-<h3>
-Informação credível
-</h3>
-
-
-<p>
-
-Consulta identidades e históricos organizados.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<div class="icon">
-🤝
-</div>
-
-
-<h3>
-Novas ligações
-</h3>
-
-
-<p>
-
-Liga clubes, atletas e treinadores num único ecossistema.
-
-</p>
-
-
-</div>
-
-
-
-<div class="card">
-
-
-<div class="icon">
-📈
-</div>
-
-
-<h3>
-Melhores decisões
-</h3>
-
-
-<p>
-
-Mais contexto para recrutamento e desenvolvimento.
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="section">
-
-
-<div class="container">
-
-
-<div class="section-title">
-
-
-<h2>
-
-Criado para o ecossistema dos clubes
-
-</h2>
-
-
-</div>
-
-
-
-<div class="cards">
-
-
-
-<div class="card">
-
-<h3>
-Clubes Profissionais
-</h3>
-
-<p>
-Apoio na descoberta e avaliação de talento.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>
-Academias
-</h3>
-
-<p>
-Organização do desenvolvimento de jovens atletas.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>
-Departamentos de Scouting
-</h3>
-
-<p>
-Mais informação para identificar oportunidades.
-</p>
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="founders">
-
-
-<div class="container center">
-
-
-<h2>
-
-Faça parte da nova identidade do desporto.
-
-</h2>
-
-
-<p>
-
-Os primeiros clubes vão ajudar a construir a rede XTalentID.
-
-</p>
-
-
-<a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-white">
-
-Quero saber mais
-
-</a>
-
-
-</div>
-
-
-</section>
-
-
-
-</main>
-
-
-<footer>
-
-<div class="container footer-content">
-
-
-<h3>
-XTalentID
-</h3>
-
-
-<p>
-The Trusted Sports Identity
-</p>
-
-
-<p>
-Every career deserves to be trusted.
-</p>
-
-
-
-<div class="footer-links">
-
-<a href="../index.html">
-Plataforma
-</a>
-
-
-<a href="sobre.html">
-Sobre
-</a>
-
-
-<a href="atletas.html">
-Atletas
-</a>
-
-
-<a href="treinadores.html">
-Treinadores
-</a>
-
-
-<a href="clubes.html">
-Clubes
-</a>
-
-
-<a href="contacto.html">
-Contacto
-</a>
-
-
-</div>
-
-
-<p class="copyright">
-
-© 2026 XTalentID. All rights reserved.
-
-</p>
-
-
-</div>
-
-
-</footer>
-
-<!-- Script do Tally -->
-<script async src="https://tally.so/widgets/embed.js"></script>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="tag">
+                        XTALENTID FOR CLUBS
+                    </span>
+
+                    <h1>
+                        Descobre talento com mais confiança.
+                    </h1>
+
+                    <p>
+                        Uma plataforma criada para ajudar clubes a conhecer melhor atletas, treinadores e profissionais do desporto através de identidades digitais organizadas e verificáveis.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-primary">
+                            Juntar o meu clube
+                        </a>
+
+                        <a href="#benefits" class="btn-outline">
+                            Saber mais
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="passport">
+                        <div class="passport-header">
+                            <span>XTalentID</span>
+                            <strong>CLUB</strong>
+                        </div>
+
+                        <h3>Talent Discovery</h3>
+                        <p>Verified Sports Network</p>
+
+                        <div class="line"></div>
+
+                        <div class="data">
+                            <div>
+                                <strong>Athletes</strong>
+                                <span>Histórico e percurso organizado</span>
+                            </div>
+
+                            <div>
+                                <strong>Coaches</strong>
+                                <span>Experiência e referências</span>
+                            </div>
+                        </div>
+
+                        <div class="verified">
+                            ✓ Trusted Network
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container center">
+                <h2>
+                    O talento existe. A informação precisa de confiança.
+                </h2>
+
+                <p>
+                    Os clubes recebem diariamente jogadores, vídeos, recomendações e contactos.
+                    A XTalentID ajuda a organizar essa informação para criar melhores ligações no mundo do desporto.
+                </p>
+            </div>
+        </section>
+
+        <section id="benefits" class="section grey">
+            <div class="container">
+                <div class="section-title">
+                    <h2>
+                        O que a XTalentID oferece aos clubes
+                    </h2>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="icon">🔎</div>
+                        <h3>Scouting mais informado</h3>
+                        <p>Conhece melhor o percurso de atletas antes de tomar decisões.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">✅</div>
+                        <h3>Informação credível</h3>
+                        <p>Consulta identidades e históricos organizados.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">🤝</div>
+                        <h3>Novas ligações</h3>
+                        <p>Liga clubes, atletas e treinadores num único ecossistema.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">📈</div>
+                        <h3>Melhores decisões</h3>
+                        <p>Mais contexto para recrutamento e desenvolvimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>
+                        Criado para o ecossistema dos clubes
+                    </h2>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <h3>Clubes Profissionais</h3>
+                        <p>Apoio na descoberta e avaliação de talento.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Academias</h3>
+                        <p>Organização do desenvolvimento de jovens atletas.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Departamentos de Scouting</h3>
+                        <p>Mais informação para identificar oportunidades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="founders">
+            <div class="container center">
+                <h2>
+                    Faça parte da nova identidade do desporto.
+                </h2>
+
+                <p>
+                    Os primeiros clubes vão ajudar a construir a rede XTalentID.
+                </p>
+
+                <a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-white">
+                    Quero saber mais
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <h3>XTalentID</h3>
+            <p>The Trusted Sports Identity</p>
+            <p>Every career deserves to be trusted.</p>
+
+            <div class="footer-links">
+                <a href="../index.html">Plataforma</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="atletas.html">Atletas</a>
+                <a href="treinadores.html">Treinadores</a>
+                <a href="clubes.html">Clubes</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+
+            <p class="copyright">
+                © 2026 XTalentID. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script do Tally -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <!-- Script de Pesquisa XTalentID -->
+    <script>
+    function executeSearch() {
+        const query = document.getElementById('globalSearch').value.toLowerCase().trim();
+        
+        if (query.includes('ronaldo') || query.includes('cristiano')) {
+            window.location.href = 'cristiano-ronaldo.html';
+        } else if (query.length > 0) {
+            window.location.href = 'atletas.html?q=' + encodeURIComponent(query);
+        }
+    }
+
+    function searchRedirect(event) {
+        if (event.key === 'Enter') {
+            executeSearch();
+        }
+    }
+    </script>
 
 </body>
 
