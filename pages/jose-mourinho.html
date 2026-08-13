@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>José Mourinho | XTalentID Sports Passport</title>
-
     <link rel="stylesheet" href="../css/style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <style>
         /* Estilos específicos para o perfil do Treinador / Passport */
         .profile-header {
@@ -22,14 +16,12 @@
             padding: 3rem 0;
             border-bottom: 3px solid #00e676;
         }
-
         .profile-grid {
             display: grid;
             grid-template-columns: 280px 1fr;
             gap: 2.5rem;
             align-items: center;
         }
-
         .profile-photo {
             width: 100%;
             border-radius: 16px;
@@ -38,7 +30,6 @@
             aspect-ratio: 1/1;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
-
         .profile-info h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
@@ -46,7 +37,6 @@
             align-items: center;
             gap: 10px;
         }
-
         .verified-badge {
             background: rgba(0, 230, 118, 0.15);
             color: #00e676;
@@ -56,7 +46,6 @@
             border-radius: 20px;
             font-weight: 600;
         }
-
         .profile-meta {
             display: flex;
             flex-wrap: wrap;
@@ -65,12 +54,10 @@
             font-size: 1rem;
             color: #cbd5e1;
         }
-
         .profile-meta div strong {
             color: #ffffff;
             display: block;
         }
-
         .profile-actions {
             display: flex;
             flex-wrap: wrap;
@@ -78,7 +65,6 @@
             align-items: center;
             margin-top: 1.5rem;
         }
-
         .btn-outline {
             display: inline-flex;
             align-items: center;
@@ -94,20 +80,17 @@
             transition: all 0.2s ease;
             text-decoration: none;
         }
-
         .btn-outline:hover {
             border-color: #00e676;
             color: #00e676;
             background: rgba(0, 230, 118, 0.1);
         }
-
         /* Redes Sociais */
         .social-links-container {
             margin-top: 1.5rem;
             padding-top: 1.25rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         .social-title {
             font-size: 0.85rem;
             color: #94a3b8;
@@ -117,13 +100,11 @@
             display: block;
             margin-bottom: 0.75rem;
         }
-
         .social-badges {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
         }
-
         .social-badge {
             display: inline-flex;
             align-items: center;
@@ -138,21 +119,18 @@
             text-decoration: none;
             transition: all 0.2s ease;
         }
-
         .social-badge:hover {
             border-color: #00e676;
             color: #00e676;
             background: rgba(0, 230, 118, 0.1);
             transform: translateY(-2px);
         }
-
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
-
         .stat-card {
             background: #ffffff;
             border-radius: 12px;
@@ -161,13 +139,11 @@
             border: 1px solid #e2e8f0;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-
         .stat-card .number {
             font-size: 2.2rem;
             font-weight: 800;
             color: #0f172a;
         }
-
         .stat-card .label {
             font-size: 0.85rem;
             color: #64748b;
@@ -175,7 +151,6 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         /* Timeline / Percurso */
         .timeline {
             position: relative;
@@ -183,12 +158,10 @@
             border-left: 3px solid #e2e8f0;
             margin-top: 1.5rem;
         }
-
         .timeline-item {
             position: relative;
             margin-bottom: 1.5rem;
         }
-
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -201,7 +174,6 @@
             border: 3px solid #ffffff;
             z-index: 2;
         }
-
         .timeline-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -210,12 +182,10 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
         }
-
         .timeline-card:hover {
             border-color: #00e676;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
-
         .timeline-header {
             padding: 1.25rem 1.5rem;
             cursor: pointer;
@@ -225,50 +195,42 @@
             user-select: none;
             background: #ffffff;
         }
-
         .timeline-header-info {
             display: flex;
             flex-direction: column;
             gap: 4px;
         }
-
         .timeline-date {
             font-size: 0.85rem;
             font-weight: 700;
             color: #00b359;
             text-transform: uppercase;
         }
-
         .timeline-title {
             font-size: 1.2rem;
             font-weight: 700;
             color: #0f172a;
             margin: 0;
         }
-
         .toggle-icon {
             font-size: 1.2rem;
             color: #64748b;
             transition: transform 0.3s ease;
             font-weight: bold;
         }
-
         .timeline-content {
             display: none;
             padding: 0 1.5rem 1.5rem 1.5rem;
             border-top: 1px solid #f1f5f9;
             background: #fafafa;
         }
-
         .timeline-item.active .timeline-content {
             display: block;
         }
-
         .timeline-item.active .toggle-icon {
             transform: rotate(180deg);
             color: #00e676;
         }
-
         .season-stats {
             display: flex;
             gap: 1.5rem;
@@ -278,30 +240,25 @@
             border-radius: 8px;
             border: 1px solid #e2e8f0;
         }
-
         .season-stat-item {
             display: flex;
             flex-direction: column;
         }
-
         .season-stat-item span {
             font-size: 0.75rem;
             color: #64748b;
             text-transform: uppercase;
             font-weight: 600;
         }
-
         .season-stat-item strong {
             font-size: 1.1rem;
             color: #0f172a;
         }
-
         .trophy-list {
             list-style: none;
             padding: 0;
             margin: 0.5rem 0 0 0;
         }
-
         .trophy-list li {
             font-size: 0.9rem;
             color: #334155;
@@ -310,7 +267,6 @@
             align-items: center;
             gap: 8px;
         }
-
         /* Grelha de Vídeos */
         .video-grid {
             display: grid;
@@ -318,7 +274,6 @@
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
-
         .video-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -327,12 +282,10 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
-
         .video-card:hover {
             border-color: #00e676;
             transform: translateY(-2px);
         }
-
         .video-card h4 {
             padding: 1rem 1.25rem;
             font-size: 1rem;
@@ -342,7 +295,6 @@
             border-bottom: 1px solid #e2e8f0;
             font-weight: 700;
         }
-
         .video-responsive {
             position: relative;
             padding-bottom: 56.25%;
@@ -350,7 +302,6 @@
             overflow: hidden;
             background: #000;
         }
-
         .video-responsive iframe {
             position: absolute;
             top: 0;
@@ -359,47 +310,37 @@
             height: 100%;
             border: 0;
         }
-
         @media (max-width: 768px) {
             .profile-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-
             .profile-photo {
                 max-width: 200px;
                 margin: 0 auto;
             }
-
             .profile-meta,
             .social-badges,
             .profile-actions {
                 justify-content: center;
             }
-
             .timeline {
                 padding-left: 1.5rem;
             }
-
             .timeline-item::before {
                 left: -2.1rem;
             }
-
             .season-stats {
                 flex-wrap: wrap;
                 gap: 1rem;
             }
-
             .video-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
-
 </head>
-
 <body>
-
     <header>
         <div class="container navbar">
             <div class="logo">
@@ -421,9 +362,7 @@
             </a>
         </div>
     </header>
-
     <main>
-
         <!-- Header do Perfil / Cartão Principal -->
         <section class="profile-header">
             <div class="container profile-grid">
@@ -434,7 +373,6 @@
                     <span class="verified-badge">✓ XTalentID Verified Coach</span>
                     <h1>José Mourinho</h1>
                     <p style="color: #94a3b8; font-size: 1.1rem;">Treinador Principal • Real Madrid CF</p>
-
                     <div class="profile-meta">
                         <div>
                             <span>Nacionalidade</span>
@@ -457,7 +395,6 @@
                             <strong>Gestifute</strong>
                         </div>
                     </div>
-
                     <!-- Ações -->
                     <div class="profile-actions">
                         <a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-primary">
@@ -474,7 +411,6 @@
                             <span id="shareText">Partilhar Passaporte</span>
                         </button>
                     </div>
-
                     <!-- Redes Sociais -->
                     <div class="social-links-container">
                         <span class="social-title">Redes Oficiais:</span>
@@ -488,7 +424,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Métricas Principais do Treinador -->
         <section class="section">
             <div class="container">
@@ -496,7 +431,6 @@
                     <h2>Estatísticas & Impacto na Carreira</h2>
                     <p>Registos consolidados em competições nacionais e internacionais.</p>
                 </div>
-
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="number">1150+</div>
@@ -521,7 +455,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Percurso Completo do Treinador (Timeline Completa) -->
         <section class="section grey">
             <div class="container">
@@ -529,9 +462,7 @@
                     <h2>Histórico de Clubes & Projetos (Clique para expandir)</h2>
                     <p>Histórico completo de clubes orientados e conquistas na carreira.</p>
                 </div>
-
                 <div class="timeline">
-
                     <!-- Real Madrid (2º Período) -->
                     <div class="timeline-item active">
                         <div class="timeline-card">
@@ -557,7 +488,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- SL Benfica (2º Período) -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -583,7 +513,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Fenerbahçe SK -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -605,7 +534,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- AS Roma -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -635,7 +563,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Tottenham Hotspur -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -661,7 +588,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Manchester United -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -692,7 +618,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Chelsea FC (2º Período) -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -722,7 +647,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Real Madrid (1º Período) -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -753,7 +677,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Inter de Milão -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -785,7 +708,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Chelsea FC (1º Período) -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -817,7 +739,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- FC Porto -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -850,7 +771,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- União de Leiria -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -876,7 +796,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- SL Benfica (1º Período) -->
                     <div class="timeline-item">
                         <div class="timeline-card">
@@ -902,11 +821,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
-
         <!-- Notícias & Imprensa -->
         <section class="section">
             <div class="container">
@@ -914,7 +831,6 @@
                     <h2>Notícias & Destaques de Imprensa</h2>
                     <p>Análises táticas, entrevistas e impacto nos clubes.</p>
                 </div>
-
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
                     <article style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
@@ -924,7 +840,6 @@
                         </div>
                         <a href="https://www.marca.com" target="_blank" rel="noopener" style="color: #00b359; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Ler artigo →</a>
                     </article>
-
                     <article style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
                             <span style="font-size: 0.8rem; color: #00b359; font-weight: 700; text-transform: uppercase;">A Bola • 2026</span>
@@ -936,7 +851,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Galeria de Fotos -->
         <section class="section grey">
             <div class="container">
@@ -944,7 +858,6 @@
                     <h2>Galeria de Fotos</h2>
                     <p>Momentos de liderança em jogo, treinos e celebrações de títulos.</p>
                 </div>
-
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
                     <div style="border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
                         <img src="../images/josemourinho.jpg" alt="José Mourinho em Treino" style="width: 100%; height: 200px; object-fit: cover; display: block;">
@@ -958,7 +871,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Vídeos & Análises Táticas -->
         <section class="section">
             <div class="container">
@@ -966,32 +878,29 @@
                     <h2>Conferências & Análises Táticas</h2>
                     <p>Intervenções públicas, mestria tática e momentos marcantes.</p>
                 </div>
-
                 <div class="video-grid">
                     <div class="video-card">
                         <h4>José Mourinho - Trailer Netflix</h4>
                         <div class="video-responsive">
-                            <iframe src="https://www.youtube.com/watch?v=e26vQ3ddHRE" title="Jose Mourinho" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/e26vQ3ddHRE" title="Jose Mourinho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
-
     <footer>
         <div class="container footer-content" style="padding: 2rem 0; text-align: center; color: #64748b; font-size: 0.9rem;">
             <p>&copy; 2026 XTalentID. Todos os direitos reservados.</p>
         </div>
     </footer>
-
     <script>
         function toggleTimeline(header) {
-            const item = header.parentElement.parentElement;
-            item.classList.toggle('active');
+            const item = header.closest('.timeline-item');
+            if (item) {
+                item.classList.toggle('active');
+            }
         }
-
         function sharePassport() {
             if (navigator.share) {
                 navigator.share({
@@ -1008,7 +917,5 @@
             }
         }
     </script>
-
 </body>
-
 </html>
