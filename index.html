@@ -227,6 +227,25 @@
     <!-- Script do Tally que faz abrir a janela flutuante ao clicar no botão -->
     <script async src="https://tally.so/widgets/embed.js"></script>
 
+<!-- Script de Pesquisa XTalentID -->
+<script>
+function executeSearch() {
+    const query = document.getElementById('globalSearch').value.toLowerCase().trim();
+    
+    if (query.includes('ronaldo') || query.includes('cristiano')) {
+        window.location.href = 'pages/cristiano-ronaldo.html';
+    } else if (query.length > 0) {
+        // Redireciona para a lista geral de atletas caso digitem outro nome
+        window.location.href = 'pages/atletas.html?q=' + encodeURIComponent(query);
+    }
+}
+
+function searchRedirect(event) {
+    if (event.key === 'Enter') {
+        executeSearch();
+    }
+}
+</script>    
 </body>
 
 </html>
