@@ -101,6 +101,7 @@
     letter-spacing: 0.5px;
 }
 
+/* Timeline Interativa / Expansível */
 .timeline {
     position: relative;
     padding-left: 2rem;
@@ -110,37 +111,130 @@
 
 .timeline-item {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
     left: -2.6rem;
-    top: 0.25rem;
+    top: 1.2rem;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
     background: #00e676;
     border: 3px solid #ffffff;
+    z-index: 2;
+}
+
+/* Accordion Component */
+.timeline-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.timeline-card:hover {
+    border-color: #00e676;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.timeline-header {
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    background: #ffffff;
+}
+
+.timeline-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .timeline-date {
     font-size: 0.85rem;
     font-weight: 700;
-    color: #64748b;
+    color: #00b359;
+    text-transform: uppercase;
 }
 
 .timeline-title {
     font-size: 1.2rem;
     font-weight: 700;
     color: #0f172a;
-    margin: 0.2rem 0;
+    margin: 0;
 }
 
-.timeline-desc {
-    color: #475569;
-    font-size: 0.95rem;
+.toggle-icon {
+    font-size: 1.2rem;
+    color: #64748b;
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+.timeline-content {
+    display: none;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    border-top: 1px solid #f1f5f9;
+    background: #fafafa;
+}
+
+.timeline-item.active .timeline-content {
+    display: block;
+}
+
+.timeline-item.active .toggle-icon {
+    transform: rotate(180deg);
+    color: #00e676;
+}
+
+.season-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.season-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.season-stat-item span {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.season-stat-item strong {
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.trophy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.trophy-list li {
+    font-size: 0.9rem;
+    color: #334155;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .video-container {
@@ -177,6 +271,10 @@
     }
     .timeline-item::before {
         left: -2.1rem;
+    }
+    .season-stats {
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 }
 </style>
@@ -285,56 +383,207 @@
         </div>
     </section>
 
-    <!-- Percurso & Histórico (Timeline) -->
+    <!-- Percurso & Histórico Interativo (Timeline) -->
     <section class="section grey">
         <div class="container">
             <div class="section-title">
-                <h2>Histórico de Percurso & Clubes</h2>
-                <p>Trajetória oficial registada no ecossistema XTalentID.</p>
+                <h2>Histórico de Percurso & Épocas (Clique para expandir)</h2>
+                <p>Clica em cada etapa para ver estatísticas detalhadas, conquistas e destaques.</p>
             </div>
 
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2023 - Presente</div>
-                    <div class="timeline-title">Al-Nassr FC (Arábia Saudita)</div>
-                    <div class="timeline-desc">Avançado principal. Liderança de equipa e conquistas regionais no futebol asiático.</div>
+
+                <!-- Al-Nassr -->
+                <div class="timeline-item active">
+                    <div class="timeline-card">
+                        <div class="timeline-header" onclick="toggleTimeline(this)">
+                            <div class="timeline-header-info">
+                                <span class="timeline-date">2023 - Presente</span>
+                                <h3 class="timeline-title">Al-Nassr FC (Arábia Saudita)</h3>
+                            </div>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="season-stats">
+                                <div class="season-stat-item">
+                                    <span>Jogos</span>
+                                    <strong>70+</strong>
+                                </div>
+                                <div class="season-stat-item">
+                                    <span>Golos</span>
+                                    <strong>65+</strong>
+                                </div>
+                                <div class="season-stat-item">
+                                    <span>Assistências</span>
+                                    <strong>15+</strong>
+                                </div>
+                            </div>
+                            <p style="color: #475569; font-size: 0.95rem;">Líder e capitão de equipa. Melhor marcador da Liga Saudita e vencedor da Arab Club Champions Cup.</p>
+                            <ul class="trophy-list">
+                                <li>🏆 Arab Club Champions Cup (2023)</li>
+                                <li>🥇 Melhor Marcador da Liga Saudita (2023/24)</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Manchester United (2º Período) -->
                 <div class="timeline-item">
-                    <div class="timeline-date">2021 - 2022</div>
-                    <div class="timeline-title">Manchester United FC (Inglaterra)</div>
-                    <div class="timeline-desc">Regresso a Inglaterra. Melhor marcador da equipa na época 2021/22.</div>
+                    <div class="timeline-card">
+                        <div class="timeline-header" onclick="toggleTimeline(this)">
+                            <div class="timeline-header-info">
+                                <span class="timeline-date">2021 - 2022</span>
+                                <h3 class="timeline-title">Manchester United FC (Inglaterra)</h3>
+                            </div>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="season-stats">
+                                <div class="season-stat-item">
+                                    <span>Jogos</span>
+                                    <strong>54</strong>
+                                </div>
+                                <div class="season-stat-item">
+                                    <span>Golos</span>
+                                    <strong>27</strong>
+                                </div>
+                                <div class="season-stat-item">
+                                    <span>Assistências</span>
+                                    <strong>5</strong>
+                                </div>
+                            </div>
+                            <p style="color: #475569; font-size: 0.95rem;">Regresso a Old Trafford. Eleito Jogador do Ano do Manchester United na época 2021/22 e incluído na Equipa do Ano da Premier League.</p>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Juventus -->
                 <div class="timeline-item">
-                    <div class="timeline-date">2018 - 2021</div>
-                    <div class="timeline-title">Juventus FC (Itália)</div>
-                    <div class="timeline-desc">Bicampeão da Serie A, vencedor de Taça e Supertaça de Itália.</div>
+                    <div class="timeline-card">
+                        <div class="timeline-header" onclick="toggleTimeline(this)">
+                            <div class="timeline-header-info">
+                                <span class="timeline-date">2018 - 2021</span>
+                                <h3 class="timeline-title">Juventus FC (Itália)</h3>
+                            </div>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="season-stats">
+                                <div class="season-stat-item">
+                                    <span>Jogos</span>
+                                    <strong>134</strong>
+                                </div>
+                                <div class="season-stat-item">
+                                    <span>Golos</span>
+                                    <strong>101</strong>
+                                </div>
+                                <div class="season-stat-item">
+                                    <span>Assistências</span>
+                                    <strong>22</strong>
+                                </div>
+                            </div>
+                            <p style="color: #475569; font-size: 0.95rem;">Domínio no futebol italiano tornando-se o jogador mais rápido na história da Juventus a atingir os 100 golos oficiais.</p>
+                            <ul class="trophy-list">
+                                <li>🏆 2x Serie A (2018/19, 2019/20)</li>
+                                <li>🏆 1x Coppa Italia (2020/21)</li>
+                                <li>🏆 2x Supercoppa Italiana (2018, 2020)</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Real Madrid -->
                 <div class="timeline-item">
-                    <div class="timeline-date">2009 - 2018</div>
-                    <div class="timeline-title">Real Madrid CF (Espanha)</div>
-                    <div class="timeline-desc">4x Liga dos Campeões, 450 golos em 438 jogos, melhor marcador da história do clube.</div>
+                    <div class="timeline-card">
+                        <div class="timeline-header" onclick="toggleTimeline(this)">
+                            <div class="timeline-header-info">
+                                <span class="timeline-date">2009 - 2018</span>
+                                <h3 class="timeline-title">Real Madrid CF (Espanha)</h3>
+                            </div>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="season-stats">
+                                <div class="season-stat-item">
+                                    <span>Jogos</span>
+                                    <strong>438</strong>
+                                </div>
+                                <div class="season-stat-item">
+                                    <span>Golos</span>
+                                    <strong>450</strong>
+                                </div>
+                                <div class="season-stat-item">
+                                    <span>Assistências</span>
+                                    <strong>131</strong>
+                                </div>
+                            </div>
+                            <p style="color: #475569; font-size: 0.95rem;">Período lendário. Tornou-se o maior marcador de sempre do clube com uma média superior a 1 golo por jogo.</p>
+                            <ul class="trophy-list">
+                                <li>🏆 4x UEFA Champions League (2014, 2016, 2017, 2018)</li>
+                                <li>🏆 2x La Liga (2011/12, 2016/17)</li>
+                                <li>🥇 4x Bola de Ouro no clube (2013, 2014, 2016, 2017)</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Manchester United (1º Período) -->
                 <div class="timeline-item">
-                    <div class="timeline-date">2003 - 2009</div>
-                    <div class="timeline-title">Manchester United FC (Inglaterra)</div>
-                    <div class="timeline-desc">1x Liga dos Campeões, 3x Premier League, 1ª Bola de Ouro (2008).</div>
+                    <div class="timeline-card">
+                        <div class="timeline-header" onclick="toggleTimeline(this)">
+                            <div class="timeline-header-info">
+                                <span class="timeline-date">2003 - 2009</span>
+                                <h3 class="timeline-title">Manchester United FC (Inglaterra)</h3>
+                            </div>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="season-stats">
+                                <div class="season-stat-item">
+                                    <span>Jogos</span>
+                                    <strong>292</strong>
+                                </div>
+                                <div class="season-stat-item">
+                                    <span>Golos</span>
+                                    <strong>118</strong>
+                                </div>
+                            </div>
+                            <p style="color: #475569; font-size: 0.95rem;">Afirmação como o melhor jogador do mundo sob o comando de Sir Alex Ferguson.</p>
+                            <ul class="trophy-list">
+                                <li>🏆 1x UEFA Champions League (2008)</li>
+                                <li>🏆 3x Premier League (2007, 2008, 2009)</li>
+                                <li>🥇 1ª Bola de Ouro (2008)</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Sporting CP -->
                 <div class="timeline-item">
-                    <div class="timeline-date">2002 - 2003</div>
-                    <div class="timeline-title">Sporting CP (Portugal)</div>
-                    <div class="timeline-desc">Estreia no futebol profissional e afirmação na equipa principal do Sporting CP.</div>
+                    <div class="timeline-card">
+                        <div class="timeline-header" onclick="toggleTimeline(this)">
+                            <div class="timeline-header-info">
+                                <span class="timeline-date">1997 - 2003</span>
+                                <h3 class="timeline-title">Sporting CP (Portugal)</h3>
+                            </div>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="season-stats">
+                                <div class="season-stat-item">
+                                    <span>Jogos Seniores</span>
+                                    <strong>31</strong>
+                                </div>
+                                <div class="season-stat-item">
+                                    <span>Golos Seniores</span>
+                                    <strong>5</strong>
+                                </div>
+                            </div>
+                            <p style="color: #475569; font-size: 0.95rem;">Formação na Academia de Alcochete. Único jogador na história do clube a jogar nos Sub-16, Sub-17, Sub-18, Equipa B e Equipa Principal numa única época.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">1997 - 2002</div>
-                    <div class="timeline-title">Academia Sporting CP (Formação)</div>
-                    <div class="timeline-desc">Percurso pelas equipas de formação jovens até ao futebol sénior.</div>
-                </div>
             </div>
         </div>
     </section>
@@ -386,6 +635,14 @@
 
 <!-- Script do Tally -->
 <script async src="https://tally.so/widgets/embed.js"></script>
+
+<!-- Script para a Timeline Expansível (Accordion) -->
+<script>
+function toggleTimeline(headerElement) {
+    const timelineItem = headerElement.closest('.timeline-item');
+    timelineItem.classList.toggle('active');
+}
+</script>
 
 </body>
 </html>
