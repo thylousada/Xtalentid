@@ -25,6 +25,13 @@
                     <img src="../images/xtalentidlogo.jpg" alt="XTalentID">
                 </a>
             </div>
+
+            <!-- Barra de Pesquisa Rápida -->
+            <div class="search-box">
+                <input type="text" id="globalSearch" placeholder="Pesquisar..." onkeyup="searchRedirect(event)">
+                <button onclick="executeSearch()">🔍</button>
+            </div>
+
             <nav>
                 <a href="../index.html">Início</a>
                 <a href="sobre.html">Sobre</a>
@@ -34,6 +41,7 @@
                 <a href="founding-members.html">Founding Members</a>
                 <a href="contacto.html">Contacto</a>
             </nav>
+
             <a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-primary">
                 Criar Sports Passport
             </a>
@@ -206,6 +214,25 @@
 
     <!-- Script do Tally -->
     <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <!-- Script de Pesquisa XTalentID -->
+    <script>
+    function executeSearch() {
+        const query = document.getElementById('globalSearch').value.toLowerCase().trim();
+        
+        if (query.includes('ronaldo') || query.includes('cristiano')) {
+            window.location.href = 'cristiano-ronaldo.html';
+        } else if (query.length > 0) {
+            window.location.href = 'atletas.html?q=' + encodeURIComponent(query);
+        }
+    }
+
+    function searchRedirect(event) {
+        if (event.key === 'Enter') {
+            executeSearch();
+        }
+    }
+    </script>
 
 </body>
 
