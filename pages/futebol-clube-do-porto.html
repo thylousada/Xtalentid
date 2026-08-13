@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* Estilos Base do Clube */
         .club-header {
             background: linear-gradient(135deg, #002366 0%, #0f172a 100%);
             color: #ffffff;
@@ -44,6 +45,8 @@
             border-radius: 20px;
             font-weight: 600;
         }
+        
+        /* Grelha de Troféus */
         .trophy-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -57,6 +60,11 @@
             text-align: center;
             border: 1px solid #e2e8f0;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+        .trophy-card:hover {
+            transform: translateY(-3px);
+            border-color: #002366;
         }
         .trophy-card .count {
             font-size: 2.2rem;
@@ -69,9 +77,92 @@
             font-weight: 700;
             text-transform: uppercase;
         }
+        .trophy-card.youth {
+            border-left: 4px solid #00e676;
+        }
+
+        /* Timeline / História */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid #e2e8f0;
+            margin-top: 1.5rem;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 1.2rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #002366;
+            border: 3px solid #ffffff;
+            z-index: 2;
+        }
+        .timeline-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .timeline-card:hover {
+            border-color: #002366;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .timeline-header {
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            background: #f8fafc;
+        }
+        .timeline-date {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #002366;
+            text-transform: uppercase;
+        }
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0;
+        }
+        .toggle-icon {
+            font-size: 1.2rem;
+            color: #64748b;
+            transition: transform 0.3s ease;
+        }
+        .timeline-content {
+            display: none;
+            padding: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .timeline-item.active .timeline-content {
+            display: block;
+        }
+        .timeline-item.active .toggle-icon {
+            transform: rotate(180deg);
+            color: #002366;
+        }
+
         @media (max-width: 768px) {
             .club-grid { grid-template-columns: 1fr; text-align: center; }
             .club-badge-main { margin: 0 auto; }
+            .timeline { padding-left: 1.5rem; }
+            .timeline-item::before { left: -2.1rem; }
         }
     </style>
 </head>
@@ -92,7 +183,7 @@
                 <a href="founding-members.html">Founding Members</a>
                 <a href="contacto.html">Contacto</a>
             </nav>
-            <a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-primary">Criar Sports Passport</a>
+            <a href="#tally-open=b5MN57" class="btn-primary">Criar Sports Passport</a>
         </div>
     </header>
 
@@ -109,7 +200,7 @@
                     <p style="color: #94a3b8; font-size: 1.1rem; margin-bottom: 1rem;">Liga Portugal Betclic • Filiado UEFA / FIFA</p>
                     
                     <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.5rem;">
-                        <div><strong>Fundação:</strong> 1893</div>
+                        <div><strong>Fundação:</strong> 28 Setembro 1893</div>
                         <div><strong>Estádio:</strong> Estádio do Dragão (50.033)</div>
                         <div><strong>Presidente:</strong> André Villas-Boas</div>
                         <div><strong>Cidade:</strong> Porto, Portugal 🇵🇹</div>
@@ -120,18 +211,18 @@
             </div>
         </section>
 
-        <!-- Galeria de Troféus Principais -->
+        <!-- Palmarés Equipa Principal -->
         <section class="section">
             <div class="container">
                 <div class="section-title">
-                    <h2>Palmarés & Troféus Oficiais</h2>
+                    <h2>Palmarés Principal (Seniores)</h2>
                     <p>O clube português com mais títulos conquistados no futebol internacional.</p>
                 </div>
 
                 <div class="trophy-grid">
                     <div class="trophy-card">
                         <div class="count">2</div>
-                        <div class="title">Champions League / Taça dos Campeões</div>
+                        <div class="title">Champions League</div>
                     </div>
                     <div class="trophy-card">
                         <div class="count">2</div>
@@ -155,36 +246,173 @@
                     </div>
                     <div class="trophy-card">
                         <div class="count">25</div>
-                        <div class="title">Supertaças Cândido de Oliveira</div>
-                    </div>
-                    <div class="trophy-card">
-                        <div class="count">1</div>
-                        <div class="title">Taça da Liga</div>
+                        <div class="title">Supertaças de Portugal</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Estrutura & Infraestruturas -->
+        <!-- Palmarés Formação (CRUCIAL PARA OS ATLETAS XTalentID) -->
+        <section class="section grey">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Academia & Formação (Youth Trophies)</h2>
+                    <p>Histórico de conquistas das equipas jovens. Referência essencial para atletas em desenvolvimento.</p>
+                </div>
+
+                <div class="trophy-grid">
+                    <div class="trophy-card youth">
+                        <div class="count">1</div>
+                        <div class="title">UEFA Youth League (Sub-19)</div>
+                        <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-top: 5px;">2018/19</span>
+                    </div>
+                    <div class="trophy-card youth">
+                        <div class="count">1</div>
+                        <div class="title">Blue Stars / FIFA Youth Cup</div>
+                        <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-top: 5px;">2011</span>
+                    </div>
+                    <div class="trophy-card youth">
+                        <div class="count">23</div>
+                        <div class="title">Campeonatos Nacionais Juniores (Sub-19)</div>
+                    </div>
+                    <div class="trophy-card youth">
+                        <div class="count">20</div>
+                        <div class="title">Campeonatos Nacionais Juvenis (Sub-17)</div>
+                    </div>
+                    <div class="trophy-card youth">
+                        <div class="count">14</div>
+                        <div class="title">Campeonatos Nacionais Iniciados (Sub-15)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cronologia Histórica por Eras -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Cronologia & Eras Históricas (Clique para expandir)</h2>
+                    <p>Os anos de ouro e os marcos que definem a história do clube.</p>
+                </div>
+                
+                <div class="timeline">
+                    <!-- Era Recente -->
+                    <div class="timeline-item active">
+                        <div class="timeline-card">
+                            <div class="timeline-header" onclick="toggleTimeline(this)">
+                                <div>
+                                    <span class="timeline-date">2018 - 2019</span>
+                                    <h3 class="timeline-title">O Topo da Formação Europeia</h3>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="timeline-content">
+                                <p>O FC Porto tornou-se o primeiro clube português a conquistar a <strong>UEFA Youth League</strong>, derrotando o Chelsea FC na final por 3-1 em Nyon. Este marco consolidou a Academia do Olival como uma das melhores da Europa na produção de talento.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Era Villas-Boas -->
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-header" onclick="toggleTimeline(this)">
+                                <div>
+                                    <span class="timeline-date">2010 - 2011</span>
+                                    <h3 class="timeline-title">A Época Imbatível e a Liga Europa</h3>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="timeline-content">
+                                <p>Sob o comando de André Villas-Boas, o clube viveu uma das melhores épocas da sua história. Venceu a Liga Europa da UEFA numa final 100% portuguesa contra o SC Braga (em Dublin), conquistou o Campeonato Nacional sem qualquer derrota, venceu a Taça de Portugal e a Supertaça.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Era Mourinho -->
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-header" onclick="toggleTimeline(this)">
+                                <div>
+                                    <span class="timeline-date">2002 - 2004</span>
+                                    <h3 class="timeline-title">O Domínio Europeu (Mourinho)</h3>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="timeline-content">
+                                <p>Com José Mourinho ao leme, o FC Porto chocou a Europa ao conquistar consecutivamente a Taça UEFA (2002/03 em Sevilha contra o Celtic) e a Liga dos Campeões da UEFA (2003/04 em Gelsenkirchen contra o AS Monaco). Em paralelo, conquistou os respetivos campeonatos nacionais.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- O Pentacampeonato -->
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-header" onclick="toggleTimeline(this)">
+                                <div>
+                                    <span class="timeline-date">1994 - 1999</span>
+                                    <h3 class="timeline-title">O Inédito Pentacampeonato</h3>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="timeline-content">
+                                <p>O FC Porto estabeleceu um recorde no futebol português que perdura até hoje: conquistar 5 campeonatos nacionais consecutivos. Uma era marcada por grandes figuras como Vítor Baía, João Pinto, Aloísio, Drulovic, Rui Barros e Mário Jardel.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Primeira Glória Europeia -->
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-header" onclick="toggleTimeline(this)">
+                                <div>
+                                    <span class="timeline-date">1986 - 1987</span>
+                                    <h3 class="timeline-title">A Primeira Taça dos Campeões e Mundial</h3>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="timeline-content">
+                                <p>Treinado por Artur Jorge, o FC Porto venceu o Bayern Munique por 2-1 em Viena (com o famoso golo de calcanhar de Madjer e o golo de Juary) para levantar a sua primeira Taça dos Campeões Europeus. No mesmo ano civil (com Tomislav Ivić), o clube sagrou-se Campeão do Mundo ao vencer o Peñarol na neve de Tóquio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Fundação -->
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-header" onclick="toggleTimeline(this)">
+                                <div>
+                                    <span class="timeline-date">1893 - 1906</span>
+                                    <h3 class="timeline-title">Fundação e Renascimento</h3>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="timeline-content">
+                                <p>O clube foi fundado a 28 de setembro de 1893 por António Nicolau d'Almeida. Após um período de inatividade, foi refundado e revitalizado em 1906 por José Monteiro da Costa, adotando as cores azul e branca da bandeira de Portugal da altura.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infraestruturas -->
         <section class="section grey">
             <div class="container">
                 <div class="section-title">
                     <h2>Complexo Desportivo & Infraestruturas</h2>
-                    <p>Equipamentos de alta performance e formação de atletas.</p>
                 </div>
-                
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
                     <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0;">
                         <h3 style="color: #002366; margin-top: 0;">Estádio do Dragão</h3>
-                        <p style="color: #64748b; font-size: 0.95rem;">Recinto com certificação de 5 estrelas UEFA, capacidade para mais de 50.000 espectadores e tecnologia sustentável de topo.</p>
+                        <p style="color: #64748b; font-size: 0.95rem;">Capacidade: 50.033. Recinto UEFA 5 estrelas inaugurado em 2003.</p>
                     </div>
                     <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0;">
-                        <h3 style="color: #002366; margin-top: 0;">CTFD Olival / Gaia</h3>
-                        <p style="color: #64748b; font-size: 0.95rem;">Centro de estágio dedicado ao treino diário da equipa principal e preparação tática e física das equipas jovens.</p>
+                        <h3 style="color: #002366; margin-top: 0;">CTFD Olival (PortoGaia)</h3>
+                        <p style="color: #64748b; font-size: 0.95rem;">Centro de treinos da equipa principal e camadas jovens (Formação).</p>
                     </div>
                     <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0;">
                         <h3 style="color: #002366; margin-top: 0;">Dragão Arena</h3>
-                        <p style="color: #64748b; font-size: 0.95rem;">Pavilhão de alta competição para 2.179 espectadores, casa das modalidades de basquetebol, andebol, hóquei em patins e voleibol.</p>
+                        <p style="color: #64748b; font-size: 0.95rem;">Pavilhão para modalidades de alta competição (Andebol, Basquetebol, Hóquei, Voleibol).</p>
                     </div>
                 </div>
             </div>
@@ -213,24 +441,25 @@
                     <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 1.2rem; font-weight: 700;">Plataforma</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
                         <li><a href="founding-members.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Founding Members</a></li>
-                        <li><a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" style="color: #00e676; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Criar Sports Passport</a></li>
+                        <li><a href="#tally-open=b5MN57" style="color: #00e676; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Criar Sports Passport</a></li>
                         <li><a href="contacto.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Contacto & Suporte</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 1.2rem; font-weight: 700;">Legal</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Termos de Utilização</a></li>
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Política de Privacidade</a></li>
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Cookies</a></li>
-                    </ul>
-                </div>
             </div>
-            <div class="footer-bottom" style="padding: 1.5rem 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; color: #64748b; font-size: 0.85rem;">
-                <p style="margin: 0;">&copy; 2026 XTalentID. Todos os direitos reservados.</p>
-                <p style="margin: 0; color: #94a3b8;">Empowering Sports Talent Worldwide</p>
+            <div class="footer-bottom" style="padding: 1.5rem 0; text-align: center; color: #64748b; font-size: 0.85rem;">
+                <p>&copy; 2026 XTalentID. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Script para Expandir/Recolher a Timeline -->
+    <script>
+        function toggleTimeline(header) {
+            const item = header.closest('.timeline-item');
+            if (item) {
+                item.classList.toggle('active');
+            }
+        }
+    </script>
 </body>
 </html>
