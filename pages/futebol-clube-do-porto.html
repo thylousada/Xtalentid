@@ -46,39 +46,59 @@
             font-weight: 600;
         }
         
-        /* Grelha de Troféus */
-        .trophy-grid {
+        /* Grelha de Troféus Detalhada com Anos */
+        .trophy-detail-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.25rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
             margin-top: 1.5rem;
         }
-        .trophy-card {
+        .trophy-detail-card {
             background: #ffffff;
             border-radius: 12px;
-            padding: 1.25rem;
-            text-align: center;
+            padding: 1.5rem;
             border: 1px solid #e2e8f0;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .trophy-card:hover {
-            transform: translateY(-3px);
-            border-color: #002366;
-        }
-        .trophy-card .count {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #002366;
-        }
-        .trophy-card .title {
-            font-size: 0.85rem;
-            color: #64748b;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .trophy-card.youth {
+        .trophy-detail-card.youth {
             border-left: 4px solid #00e676;
+        }
+        .trophy-detail-card.senior {
+            border-left: 4px solid #002366;
+        }
+        .trophy-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 0.75rem;
+        }
+        .trophy-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #0f172a;
+            font-weight: 700;
+        }
+        .trophy-badge-count {
+            background: #002366;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1.1rem;
+            padding: 4px 12px;
+            border-radius: 8px;
+        }
+        .trophy-detail-card.youth .trophy-badge-count {
+            background: #00e676;
+            color: #0f172a;
+        }
+        .trophy-years {
+            font-size: 0.88rem;
+            color: #475569;
+            line-height: 1.6;
         }
 
         /* Timeline / História */
@@ -109,11 +129,6 @@
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .timeline-card:hover {
-            border-color: #002366;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
         .timeline-header {
             padding: 1.25rem 1.5rem;
@@ -211,78 +226,150 @@
             </div>
         </section>
 
-        <!-- Palmarés Equipa Principal -->
+        <!-- Palmarés Seniores com Histórico de Anos -->
         <section class="section">
             <div class="container">
                 <div class="section-title">
-                    <h2>Palmarés Principal (Seniores)</h2>
-                    <p>O clube português com mais títulos conquistados no futebol internacional.</p>
+                    <h2>Palmarés Oficial (Equipa Principal)</h2>
+                    <p>Todas as conquistas nacionais e internacionais detalhadas por ano/época.</p>
                 </div>
 
-                <div class="trophy-grid">
-                    <div class="trophy-card">
-                        <div class="count">2</div>
-                        <div class="title">Champions League</div>
+                <div class="trophy-detail-grid">
+                    
+                    <div class="trophy-detail-card senior">
+                        <div class="trophy-header">
+                            <h3>Champions League / Taça dos Campeões</h3>
+                            <span class="trophy-badge-count">2</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Épocas:</strong> 1986/87, 2003/04
+                        </div>
                     </div>
-                    <div class="trophy-card">
-                        <div class="count">2</div>
-                        <div class="title">Liga Europa / Taça UEFA</div>
+
+                    <div class="trophy-detail-card senior">
+                        <div class="trophy-header">
+                            <h3>Liga Europa / Taça UEFA</h3>
+                            <span class="trophy-badge-count">2</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Épocas:</strong> 2002/03, 2010/11
+                        </div>
                     </div>
-                    <div class="trophy-card">
-                        <div class="count">2</div>
-                        <div class="title">Taça Intercontinental</div>
+
+                    <div class="trophy-detail-card senior">
+                        <div class="trophy-header">
+                            <h3>Taça Intercontinental</h3>
+                            <span class="trophy-badge-count">2</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Anos:</strong> 1987, 2004
+                        </div>
                     </div>
-                    <div class="trophy-card">
-                        <div class="count">1</div>
-                        <div class="title">Supertaça Europeia</div>
+
+                    <div class="trophy-detail-card senior">
+                        <div class="trophy-header">
+                            <h3>Supertaça Europeia</h3>
+                            <span class="trophy-badge-count">1</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Ano:</strong> 1987
+                        </div>
                     </div>
-                    <div class="trophy-card">
-                        <div class="count">31</div>
-                        <div class="title">Campeonatos Nacionais</div>
+
+                    <div class="trophy-detail-card senior" style="grid-column: span 1 / -1;">
+                        <div class="trophy-header">
+                            <h3>Campeonatos Nacionais (Primeira Liga)</h3>
+                            <span class="trophy-badge-count">31</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Épocas:</strong> 1934/35, 1938/39, 1939/40, 1955/56, 1958/59, 1977/78, 1978/79, 1984/85, 1985/86, 1987/88, 1989/90, 1991/92, 1992/93, 1994/95, 1995/96, 1996/97, 1997/98, 1998/99, 2002/03, 2003/04, 2005/06, 2006/07, 2007/08, 2008/09, 2010/11, 2011/12, 2012/13, 2017/18, 2019/20, 2021/22, 2025/26.
+                        </div>
                     </div>
-                    <div class="trophy-card">
-                        <div class="count">20</div>
-                        <div class="title">Taças de Portugal</div>
+
+                    <div class="trophy-detail-card senior">
+                        <div class="trophy-header">
+                            <h3>Taças de Portugal</h3>
+                            <span class="trophy-badge-count">20</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Épocas:</strong> 1955/56, 1957/58, 1967/68, 1976/77, 1983/84, 1987/88, 1990/91, 1993/94, 1997/98, 1999/00, 2000/01, 2002/03, 2005/06, 2008/09, 2009/10, 2010/11, 2019/20, 2021/22, 2022/23, 2023/24.
+                        </div>
                     </div>
-                    <div class="trophy-card">
-                        <div class="count">25</div>
-                        <div class="title">Supertaças de Portugal</div>
+
+                    <div class="trophy-detail-card senior">
+                        <div class="trophy-header">
+                            <h3>Supertaças Cândido de Oliveira</h3>
+                            <span class="trophy-badge-count">25</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Anos:</strong> 1981, 1983, 1984, 1986, 1990, 1991, 1993, 1994, 1996, 1998, 1999, 2001, 2003, 2004, 2006, 2009, 2010, 2011, 2012, 2013, 2018, 2020, 2022, 2024, 2026.
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Palmarés Formação (CRUCIAL PARA OS ATLETAS XTalentID) -->
+        <!-- Palmarés Formação (Anos Essenciais para Cruzar Dados com Atletas) -->
         <section class="section grey">
             <div class="container">
                 <div class="section-title">
-                    <h2>Academia & Formação (Youth Trophies)</h2>
-                    <p>Histórico de conquistas das equipas jovens. Referência essencial para atletas em desenvolvimento.</p>
+                    <h2>Palmarés das Equipas de Formação (Youth Trophies)</h2>
+                    <p>Histórico época a época das camadas jovens. Base de dados pronta para validação de atletas XTalentID.</p>
                 </div>
 
-                <div class="trophy-grid">
-                    <div class="trophy-card youth">
-                        <div class="count">1</div>
-                        <div class="title">UEFA Youth League (Sub-19)</div>
-                        <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-top: 5px;">2018/19</span>
+                <div class="trophy-detail-grid">
+                    
+                    <div class="trophy-detail-card youth">
+                        <div class="trophy-header">
+                            <h3>UEFA Youth League (Sub-19)</h3>
+                            <span class="trophy-badge-count">1</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Época:</strong> 2018/19
+                        </div>
                     </div>
-                    <div class="trophy-card youth">
-                        <div class="count">1</div>
-                        <div class="title">Blue Stars / FIFA Youth Cup</div>
-                        <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-top: 5px;">2011</span>
+
+                    <div class="trophy-detail-card youth">
+                        <div class="trophy-header">
+                            <h3>FIFA Youth Cup (Blue Stars)</h3>
+                            <span class="trophy-badge-count">1</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Ano:</strong> 2011
+                        </div>
                     </div>
-                    <div class="trophy-card youth">
-                        <div class="count">23</div>
-                        <div class="title">Campeonatos Nacionais Juniores (Sub-19)</div>
+
+                    <div class="trophy-detail-card youth" style="grid-column: span 1 / -1;">
+                        <div class="trophy-header">
+                            <h3>Campeonatos Nacionais Juniores (Sub-19)</h3>
+                            <span class="trophy-badge-count">23</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Épocas:</strong> 1952/53, 1963/64, 1968/69, 1970/71, 1972/73, 1978/79, 1979/80, 1981/82, 1983/84, 1985/86, 1986/87, 1989/90, 1992/93, 1993/94, 1997/98, 2000/01, 2006/07, 2010/11, 2014/15, 2015/16, 2018/19, 2023/24, 2024/25.
+                        </div>
                     </div>
-                    <div class="trophy-card youth">
-                        <div class="count">20</div>
-                        <div class="title">Campeonatos Nacionais Juvenis (Sub-17)</div>
+
+                    <div class="trophy-detail-card youth">
+                        <div class="trophy-header">
+                            <h3>Campeonatos Nacionais Juvenis (Sub-17)</h3>
+                            <span class="trophy-badge-count">20</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Épocas:</strong> 1965/66, 1970/71, 1972/73, 1976/77, 1978/79, 1979/80, 1981/82, 1984/85, 1985/86, 1987/88, 1988/89, 1994/95, 1997/98, 2001/02, 2002/03, 2008/09, 2011/12, 2013/14, 2022/23, 2024/25.
+                        </div>
                     </div>
-                    <div class="trophy-card youth">
-                        <div class="count">14</div>
-                        <div class="title">Campeonatos Nacionais Iniciados (Sub-15)</div>
+
+                    <div class="trophy-detail-card youth">
+                        <div class="trophy-header">
+                            <h3>Campeonatos Nacionais Iniciados (Sub-15)</h3>
+                            <span class="trophy-badge-count">14</span>
+                        </div>
+                        <div class="trophy-years">
+                            <strong>Épocas:</strong> 1974/75, 1976/77, 1977/78, 1979/80, 1980/81, 1985/86, 1988/89, 1997/98, 2001/02, 2004/05, 2006/07, 2007/08, 2010/11, 2023/24.
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -292,7 +379,6 @@
             <div class="container">
                 <div class="section-title">
                     <h2>Cronologia & Eras Históricas (Clique para expandir)</h2>
-                    <p>Os anos de ouro e os marcos que definem a história do clube.</p>
                 </div>
                 
                 <div class="timeline">
@@ -323,7 +409,7 @@
                                 <span class="toggle-icon">▼</span>
                             </div>
                             <div class="timeline-content">
-                                <p>Sob o comando de André Villas-Boas, o clube viveu uma das melhores épocas da sua história. Venceu a Liga Europa da UEFA numa final 100% portuguesa contra o SC Braga (em Dublin), conquistou o Campeonato Nacional sem qualquer derrota, venceu a Taça de Portugal e a Supertaça.</p>
+                                <p>Sob o comando de André Villas-Boas, o clube venceu a Liga Europa da UEFA numa final 100% portuguesa contra o SC Braga em Dublin, conquistando o Campeonato sem qualquer derrota.</p>
                             </div>
                         </div>
                     </div>
@@ -339,7 +425,7 @@
                                 <span class="toggle-icon">▼</span>
                             </div>
                             <div class="timeline-content">
-                                <p>Com José Mourinho ao leme, o FC Porto chocou a Europa ao conquistar consecutivamente a Taça UEFA (2002/03 em Sevilha contra o Celtic) e a Liga dos Campeões da UEFA (2003/04 em Gelsenkirchen contra o AS Monaco). Em paralelo, conquistou os respetivos campeonatos nacionais.</p>
+                                <p>Com José Mourinho ao leme, o FC Porto conquistou consecutivamente a Taça UEFA (2002/03) e a Liga dos Campeões da UEFA (2003/04 em Gelsenkirchen).</p>
                             </div>
                         </div>
                     </div>
@@ -355,64 +441,9 @@
                                 <span class="toggle-icon">▼</span>
                             </div>
                             <div class="timeline-content">
-                                <p>O FC Porto estabeleceu um recorde no futebol português que perdura até hoje: conquistar 5 campeonatos nacionais consecutivos. Uma era marcada por grandes figuras como Vítor Baía, João Pinto, Aloísio, Drulovic, Rui Barros e Mário Jardel.</p>
+                                <p>Conquista histórica de 5 campeonatos nacionais consecutivos (1994/95 a 1998/99), feito único no futebol português.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Primeira Glória Europeia -->
-                    <div class="timeline-item">
-                        <div class="timeline-card">
-                            <div class="timeline-header" onclick="toggleTimeline(this)">
-                                <div>
-                                    <span class="timeline-date">1986 - 1987</span>
-                                    <h3 class="timeline-title">A Primeira Taça dos Campeões e Mundial</h3>
-                                </div>
-                                <span class="toggle-icon">▼</span>
-                            </div>
-                            <div class="timeline-content">
-                                <p>Treinado por Artur Jorge, o FC Porto venceu o Bayern Munique por 2-1 em Viena (com o famoso golo de calcanhar de Madjer e o golo de Juary) para levantar a sua primeira Taça dos Campeões Europeus. No mesmo ano civil (com Tomislav Ivić), o clube sagrou-se Campeão do Mundo ao vencer o Peñarol na neve de Tóquio.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Fundação -->
-                    <div class="timeline-item">
-                        <div class="timeline-card">
-                            <div class="timeline-header" onclick="toggleTimeline(this)">
-                                <div>
-                                    <span class="timeline-date">1893 - 1906</span>
-                                    <h3 class="timeline-title">Fundação e Renascimento</h3>
-                                </div>
-                                <span class="toggle-icon">▼</span>
-                            </div>
-                            <div class="timeline-content">
-                                <p>O clube foi fundado a 28 de setembro de 1893 por António Nicolau d'Almeida. Após um período de inatividade, foi refundado e revitalizado em 1906 por José Monteiro da Costa, adotando as cores azul e branca da bandeira de Portugal da altura.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Infraestruturas -->
-        <section class="section grey">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Complexo Desportivo & Infraestruturas</h2>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-                    <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0;">
-                        <h3 style="color: #002366; margin-top: 0;">Estádio do Dragão</h3>
-                        <p style="color: #64748b; font-size: 0.95rem;">Capacidade: 50.033. Recinto UEFA 5 estrelas inaugurado em 2003.</p>
-                    </div>
-                    <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0;">
-                        <h3 style="color: #002366; margin-top: 0;">CTFD Olival (PortoGaia)</h3>
-                        <p style="color: #64748b; font-size: 0.95rem;">Centro de treinos da equipa principal e camadas jovens (Formação).</p>
-                    </div>
-                    <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0;">
-                        <h3 style="color: #002366; margin-top: 0;">Dragão Arena</h3>
-                        <p style="color: #64748b; font-size: 0.95rem;">Pavilhão para modalidades de alta competição (Andebol, Basquetebol, Hóquei, Voleibol).</p>
                     </div>
                 </div>
             </div>
@@ -422,30 +453,6 @@
     <!-- Rodapé Completo XTalentID -->
     <footer>
         <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; padding: 4rem 0 2.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                <div class="footer-col">
-                    <img src="../images/xtalentidlogo.jpg" alt="XTalentID" style="height: 40px; margin-bottom: 1rem;">
-                    <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">A plataforma de identidade digital desportiva que centraliza os passaportes profissionais de atletas, treinadores e clubes.</p>
-                </div>
-                <div class="footer-col">
-                    <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 1.2rem; font-weight: 700;">Navegação</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
-                        <li><a href="../index.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Início</a></li>
-                        <li><a href="sobre.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Sobre Nós</a></li>
-                        <li><a href="atletas.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Atletas</a></li>
-                        <li><a href="treinadores.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Treinadores</a></li>
-                        <li><a href="clubes.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Clubes</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 1.2rem; font-weight: 700;">Plataforma</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
-                        <li><a href="founding-members.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Founding Members</a></li>
-                        <li><a href="#tally-open=b5MN57" style="color: #00e676; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Criar Sports Passport</a></li>
-                        <li><a href="contacto.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Contacto & Suporte</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="footer-bottom" style="padding: 1.5rem 0; text-align: center; color: #64748b; font-size: 0.85rem;">
                 <p>&copy; 2026 XTalentID. Todos os direitos reservados.</p>
             </div>
