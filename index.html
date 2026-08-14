@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XTalentID | The Trusted Sports Identity</title>
 
+    <!-- Meta Tags para Redes Sociais (WhatsApp, LinkedIn, Facebook, Twitter) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="XTalentID | The Trusted Sports Identity">
+    <meta property="og:description" content="A plataforma de identidade digital desportiva que centraliza os passaportes profissionais de atletas, treinadores e clubes.">
+    <meta property="og:image" content="images/xtalentidlogo.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="XTalentID | The Trusted Sports Identity">
+    <meta property="twitter:description" content="A plataforma de identidade digital desportiva que centraliza os passaportes profissionais de atletas, treinadores e clubes.">
+    <meta property="twitter:image" content="images/xtalentidlogo.jpg">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <!-- Estilos CSS para os Filtros e Cartões de Perfis em Destaque -->
     <style>
         .filter-bar {
@@ -132,9 +140,7 @@
         }
     </style>
 </head>
-
 <body>
-
     <header>
         <div class="container navbar">
             <div class="logo">
@@ -148,7 +154,6 @@
                 <input type="text" id="globalSearch" placeholder="Pesquisar atleta, clube, treinador..." onkeyup="searchRedirect(event)">
                 <button onclick="executeSearch()">🔍</button>
             </div>
-
             <nav>
                 <a href="index.html">Início</a>
                 <a href="pages/sobre.html">Sobre</a>
@@ -158,30 +163,24 @@
                 <a href="pages/founding-members.html">Founding Members</a>
                 <a href="pages/contacto.html">Contacto</a>
             </nav>
-
             <a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-primary">
                 Criar Sports Passport
             </a>
         </div>
     </header>
-
     <main>
-
         <section class="hero">
             <div class="container hero-grid">
                 <div class="hero-content">
                     <span class="tag">
                         THE TRUSTED SPORTS IDENTITY
                     </span>
-
                     <h1>
                         Every career deserves to be trusted.
                     </h1>
-
                     <p>
                         A plataforma onde atletas, treinadores, clubes e profissionais do desporto constroem uma identidade digital credível, um histórico verificável e novas oportunidades.
                     </p>
-
                     <div class="hero-buttons">
                         <a href="#tally-open=b5MN57&tally-emoji-text=👋&tally-emoji-animation=wave" class="btn-primary">
                             Criar o meu XTalentID
@@ -191,19 +190,15 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="hero-card">
                     <div class="passport">
                         <div class="passport-header">
                             <span>XTalentID</span>
                             <strong>VERIFIED</strong>
                         </div>
-
                         <h3>Sports Identity</h3>
                         <p>Professional Athlete</p>
-
                         <div class="line"></div>
-
                         <div class="data">
                             <div>
                                 <strong>Career</strong>
@@ -214,7 +209,6 @@
                                 <span>High Confidence</span>
                             </div>
                         </div>
-
                         <div class="verified">
                             ✓ Identity Verified
                         </div>
@@ -222,7 +216,6 @@
                 </div>
             </div>
         </section>
-
         <!-- SECÇÃO DE PERFIS EM DESTAQUE & FILTROS -->
         <section class="section grey">
             <div class="container">
@@ -230,7 +223,6 @@
                     <h2>Perfis em Destaque</h2>
                     <p>Explora os passaportes desportivos mais consultados na plataforma.</p>
                 </div>
-
                 <!-- Barra de Filtros -->
                 <div class="filter-bar">
                     <button class="filter-btn active" onclick="filterProfiles('all', this)">Todos</button>
@@ -238,10 +230,8 @@
                     <button class="filter-btn" onclick="filterProfiles('treinador', this)">Treinadores</button>
                     <button class="filter-btn" onclick="filterProfiles('clube', this)">Clubes</button>
                 </div>
-
                 <!-- Grelha de Perfis em Destaque -->
                 <div class="profile-grid">
-
                     <!-- Cartão Atleta: Cristiano Ronaldo -->
                     <div class="profile-card profile-item" data-category="atleta">
                         <div class="profile-badge-top">Atleta • Pro</div>
@@ -261,7 +251,6 @@
                             <a href="pages/cristiano-ronaldo.html" class="btn-profile">Ver Passaporte</a>
                         </div>
                     </div>
-
                     <!-- Cartão Clube: FC Porto -->
                     <div class="profile-card profile-item" data-category="clube">
                         <div class="profile-badge-top">Clube • Verified</div>
@@ -281,7 +270,6 @@
                             <a href="pages/futebol-clube-do-porto.html" class="btn-profile">Ver Passaporte</a>
                         </div>
                     </div>
-
                     <!-- Cartão Treinador: José Mourinho -->
                     <div class="profile-card profile-item" data-category="treinador">
                         <div class="profile-badge-top">Treinador • UEFA Pro</div>
@@ -301,28 +289,23 @@
                             <a href="pages/jose-mourinho.html" class="btn-profile">Ver Passaporte</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
-
         <section id="about" class="section">
             <div class="container center">
                 <span class="tag blue">
                     WHY XTALENTID
                 </span>
-
                 <h2>
                     O desporto precisa de uma identidade de confiança.
                 </h2>
-
                 <p>
                     Hoje, as carreiras desportivas estão espalhadas por vídeos, redes sociais, currículos e contactos pessoais.
                     A XTalentID cria um espaço onde cada percurso pode ser organizado, reconhecido e valorizado.
                 </p>
             </div>
         </section>
-
         <section class="section grey">
             <div class="container">
                 <div class="section-title">
@@ -333,7 +316,6 @@
                         Uma plataforma criada para todas as pessoas que fazem parte de uma carreira desportiva.
                     </p>
                 </div>
-
                 <div class="cards">
                     <div class="card">
                         <div class="icon">🏃</div>
@@ -341,21 +323,18 @@
                         <p>Constrói a tua identidade desportiva e apresenta o teu percurso profissional.</p>
                         <a href="pages/atletas.html">Saber mais →</a>
                     </div>
-
                     <div class="card">
                         <div class="icon">🎓</div>
                         <h3>Treinadores</h3>
                         <p>Valoriza a tua experiência, metodologia e história no desporto.</p>
                         <a href="pages/treinadores.html">Saber mais →</a>
                     </div>
-
                     <div class="card">
                         <div class="icon">🏟</div>
                         <h3>Clubes</h3>
                         <p>Cria confiança através de informação organizada e verificável.</p>
                         <a href="pages/clubes.html">Saber mais →</a>
                     </div>
-
                     <div class="card">
                         <div class="icon">👨‍👩‍👧</div>
                         <h3>Famílias</h3>
@@ -365,24 +344,20 @@
                 </div>
             </div>
         </section>
-
         <section class="section">
             <div class="container steps">
                 <h2>Como funciona</h2>
-
                 <div class="step-grid">
                     <div>
                         <span>01</span>
                         <h3>Cria o teu perfil</h3>
                         <p>Começa a construir a tua identidade desportiva.</p>
                     </div>
-
                     <div>
                         <span>02</span>
                         <h3>Constrói o teu histórico</h3>
                         <p>Organiza clubes, experiências e conquistas.</p>
                     </div>
-
                     <div>
                         <span>03</span>
                         <h3>Cria oportunidades</h3>
@@ -391,7 +366,6 @@
                 </div>
             </div>
         </section>
-
         <section class="founders">
             <div class="container center">
                 <h2>Faz parte da construção da XTalentID</h2>
@@ -404,9 +378,7 @@
                 </a>
             </div>
         </section>
-
     </main>
-
     <!-- Rodapé Completo XTalentID -->
     <footer>
         <div class="container">
@@ -439,10 +411,8 @@
             </div>
         </div>
     </footer>
-
     <!-- Script do Tally que faz abrir a janela flutuante ao clicar no botão -->
     <script async src="https://tally.so/widgets/embed.js"></script>
-
     <!-- Scripts da Plataforma XTalentID -->
     <script>
     // Função de Pesquisa Superior
@@ -455,18 +425,15 @@
             window.location.href = 'pages/atletas.html?q=' + encodeURIComponent(query);
         }
     }
-
     function searchRedirect(event) {
         if (event.key === 'Enter') {
             executeSearch();
         }
     }
-
     // Função de Filtragem de Perfis na Homepage
     function filterProfiles(category, btn) {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
         const items = document.querySelectorAll('.profile-item');
         items.forEach(item => {
             if (category === 'all' || item.getAttribute('data-category') === category) {
@@ -478,5 +445,4 @@
     }
     </script>    
 </body>
-
 </html>
